@@ -1,3 +1,53 @@
 baseURL = 'https://ipv3.org/'
 languageCode = 'en-us'
 title = 'Nicole Heinimann'
+theme = "archie"
+copyright = "Nicole Heinimann"
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+mathjax = true                       # enable MathJax support
+katex = true                         # enable KaTeX support
+
+[params]
+mode = "auto"
+useCDN = false
+
+# subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+
+[[params.social]]
+name = "GitHub"
+icon = "simple:github"
+url = "https://github.com/SaltyPeppermint"
+
+[[params.social]]
+name = "Bluesky"
+icon = "simple:bluesky"
+url = "https://bsky.app/profile/saltypeppermint.bsky.social"
+
+
+[[params.social]]
+name = "Mastodon"
+icon = "simple:mastodon"
+url = "https://cyberplace.social/@SaltyPeppermint"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+# [[menu.main]]
+# name = "All posts"
+# url = "/posts"
+# weight = 2
+
+# [[menu.main]]
+# name = "About"
+# url = "/about"
+# weight = 3
+
+# [[menu.main]]
+# name = "Tags"
+# url = "/tags"
+#weight = 4
