@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    {{ partial "header.html" . }}
+    <body>
+        <div class="content">
+            {{ partial "head.html" . }}
+
+            <main>
+                <article>
+                    {{ if isset .Params "toc" }}
+                    <div class="toc">
+                        <strong>Table of contents:</strong>
+                        {{ .TableOfContents }}
+                    </div>
+                    {{ end }}
+
+                    <section class="body">{{ .Content }}</section>
+                </article>
+            </main>
+
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>
