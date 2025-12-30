@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap");
+
 :root {
   /* Colors - edit these to change the site theme */
   --color-bg: #1a1f1a;
@@ -13,11 +15,7 @@
 
   /* Typography */
   --font-mono:
+    "Noto Sans Mono",
     ui-monospace,
-    "Cascadia Code",
-    "Source Code Pro",
-    Menlo,
-    Consolas,
-    "DejaVu Sans Mono",
     monospace;
 }
