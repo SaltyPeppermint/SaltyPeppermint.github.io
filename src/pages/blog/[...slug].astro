@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+type BlogPost = CollectionEntry<"blog">;
+
+export async function getStaticPaths() {
+  const posts: BlogPost[] = await getCollection("blog");
+  return posts.map((post: BlogPost) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props as Props;
+const { Content } = await post.render();
+---
+
+<Layout
+  title={`${post.data.title} | Nicole Thalia Heinimann`}
+  description={post.data.description}
+>
+  <article>
+    <header class="post-header">
+      <time class="post-date" datetime={post.data.date.toISOString()}>
+        {
+          post.data.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      <h1>{post.data.title}</h1>
+    </header>
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+  <nav class="back-link">
+    <a href="/blog">&larr; Back to blog</a>
+  </nav>
+</Layout>
+
+<style>
+  .post-header {
+    margin-bottom: 2rem;
+  }
+
+  .post-date {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content {
+    line-height: 1.8;
+  }
+
+  .back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+</style>

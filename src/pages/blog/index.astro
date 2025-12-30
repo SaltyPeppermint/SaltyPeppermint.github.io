@@ -1,0 +1,80 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+type BlogPost = CollectionEntry<"blog">;
+
+const allBlogPosts: BlogPost[] = await getCollection("blog");
+const posts: BlogPost[] = allBlogPosts
+  .filter((post: BlogPost) => !post.data.draft)
+  .sort(
+    (a: BlogPost, b: BlogPost) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+---
+
+<Layout title="Blog | Nicole Thalia Heinimann">
+  <h1>Blog</h1>
+
+  {
+    posts.length === 0 ? (
+      <p>No posts yet. Check back soon!</p>
+    ) : (
+      <ul class="posts">
+        {posts.map((post: BlogPost) => (
+          <li class="post-item">
+            <time class="post-date" datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <a href={`/blog/${post.slug}`} class="post-title">
+              {post.data.title}
+            </a>
+            <p class="post-description">{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Layout>
+
+<style>
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+
+  .post-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .post-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-date {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-description {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+</style>

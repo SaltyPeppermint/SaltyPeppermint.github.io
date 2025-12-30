@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="CV | Nicole Thalia Heinimann">
+    <h1>Curriculum Vitae</h1>
+
+    <section>
+        <h2>Education</h2>
+        <ul class="cv-list">
+            <li class="cv-item">
+                <span class="cv-date">2024 - present</span>
+                <div class="cv-details">
+                    <span class="cv-title">PhD in Computer Science</span>
+                    <p class="cv-org">
+                        TU Berlin, Chair for Programming Languages and Compilers
+                    </p>
+                </div>
+            </li>
+            <!-- Add more education items here -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <p class="empty">Coming soon.</p>
+        <!--
+        <ul class="cv-list">
+            <li class="cv-item">
+                <span class="cv-date">2023 - 2024</span>
+                <div class="cv-details">
+                    <span class="cv-title">Position Title</span>
+                    <p class="cv-org">Organization Name</p>
+                    <p class="cv-desc">Brief description of responsibilities.</p>
+                </div>
+            </li>
+        </ul>
+        -->
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <p class="empty">Coming soon.</p>
+    </section>
+</Layout>
+
+<style>
+    section {
+        margin-bottom: 2.5rem;
+    }
+
+    .empty {
+        color: var(--color-text-muted);
+        font-style: italic;
+    }
+
+    .cv-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .cv-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .cv-item:last-child {
+        border-bottom: none;
+    }
+
+    .cv-date {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        min-width: 8rem;
+    }
+
+    .cv-details {
+        flex: 1;
+    }
+
+    .cv-title {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .cv-org {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        margin: 0.25rem 0;
+    }
+
+    .cv-desc {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+</style>

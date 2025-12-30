@@ -1,0 +1,28 @@
+---
+import { siGithub, siBluesky, siMastodon } from "simple-icons";
+
+interface Props {
+  name: "github" | "bluesky" | "mastodon";
+  size?: number;
+}
+
+const icons = {
+  github: siGithub,
+  bluesky: siBluesky,
+  mastodon: siMastodon,
+};
+
+const { name, size = 20 } = Astro.props;
+const icon = icons[name];
+---
+
+<svg
+  role="img"
+  viewBox="0 0 24 24"
+  width={size}
+  height={size}
+  fill="currentColor"
+  aria-label={icon.title}
+>
+  <path d={icon.path}></path>
+</svg>

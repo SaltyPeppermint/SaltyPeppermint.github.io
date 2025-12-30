@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Publications | Nicole Thalia Heinimann">
+    <h1>Publications</h1>
+
+    <section>
+        <h2>Papers</h2>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <span class="pub-year">2025</span>
+                <div class="pub-details">
+                    <span class="pub-title"
+                        >Machine Learning Guided Equality Saturation</span
+                    >
+                    <p class="pub-authors">
+                        Nicole Heinimann, Thomas Koehler, Michel Steuwer
+                    </p>
+                    <p class="pub-venue">
+                        EGRAPHS 2025 (co-located with PLDI 2025), Seoul
+                    </p>
+                    <p class="pub-links">
+                        <a
+                            href="https://steuwer.info/files/publications/2025/Machine_Learning_Guided_Equality_Saturation.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer">PDF</a
+                        >
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Talks</h2>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <span class="pub-year">2025</span>
+                <div class="pub-details">
+                    <span class="pub-title"
+                        >Machine Learning Guided Equality Saturation</span
+                    >
+                    <p class="pub-venue">EGRAPHS 2025, Seoul</p>
+                    <p class="pub-links">
+                        <a
+                            href="https://pldi25.sigplan.org/details/egraphs-2025-papers/6/Machine-Learning-Guided-Equality-Saturation"
+                            target="_blank"
+                            rel="noopener noreferrer">Video</a
+                        >
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</Layout>
+
+<style>
+    section {
+        margin-bottom: 2.5rem;
+    }
+
+    .empty {
+        color: var(--color-text-muted);
+        font-style: italic;
+    }
+
+    .pub-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .pub-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .pub-item:last-child {
+        border-bottom: none;
+    }
+
+    .pub-year {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        min-width: 3rem;
+    }
+
+    .pub-details {
+        flex: 1;
+    }
+
+    .pub-title {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .pub-authors,
+    .pub-venue {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        margin: 0.25rem 0;
+    }
+
+    .pub-links {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+</style>

@@ -20,5 +20,18 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
-.idea/
+# editors
+.vscode/
+.zed/
+
+# Additional env files
+.env.*
+!.env.example
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Misc
+*.local
+.vercel
+.netlify

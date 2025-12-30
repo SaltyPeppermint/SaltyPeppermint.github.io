@@ -1,0 +1,23 @@
+:root {
+  /* Colors - edit these to change the site theme */
+  --color-bg: #1a1f1a;
+  --color-surface: #242a24;
+  --color-text: #e8efe8;
+  --color-text-muted: #a8b8a8;
+  --color-accent: #6b9b6b;
+  --color-accent-hover: #8ab88a;
+  --color-border: #3a4a3a;
+
+  /* Layout */
+  --max-width: 720px;
+
+  /* Typography */
+  --font-mono:
+    ui-monospace,
+    "Cascadia Code",
+    "Source Code Pro",
+    Menlo,
+    Consolas,
+    "DejaVu Sans Mono",
+    monospace;
+}
