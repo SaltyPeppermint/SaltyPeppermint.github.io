@@ -14,8 +14,5 @@
   --max-width: 720px;
 
   /* Typography */
-  --font-mono:
-    "Noto Sans Mono",
-    ui-monospace,
-    monospace;
+  --font-mono: "Noto Sans Mono", ui-monospace, monospace;
 }
