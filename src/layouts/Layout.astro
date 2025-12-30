@@ -19,6 +19,12 @@ const {
         <meta name="viewport" content="width=device-width" />
         <meta name="description" content={description} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Nicole Thalia Heinimann's Blog"
+            href={new URL("rss.xml", Astro.site)}
+        />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
@@ -163,5 +169,23 @@ const {
     pre code {
         background-color: transparent;
         padding: 0;
+    }
+
+    @media (max-width: 600px) {
+        .nav {
+            padding: 1rem;
+        }
+
+        .nav-links {
+            gap: 1rem;
+        }
+
+        .main {
+            padding: 1.5rem 1rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
     }
 </style>
