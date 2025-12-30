@@ -4,73 +4,83 @@ import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Nicole Thalia Heinimann | Home">
-    <h1>
-        I'm a PhD Student at TU Berlin at the chair for Programming Languages
-        and Compilers
-    </h1>
+    <h1>Nicole Thalia Heinimann</h1>
 
-    <p>
-        I'm a doctoral researcher focusing on <strong
-            >Machine Learning for Guided Equality Saturation in E-Graphs</strong
-        >.
+    <p class="intro">
+        PhD student at TU Berlin, working on programming languages and
+        compilers.
     </p>
 
     <p>
-        I also have interests in GPU programming languages and Rust-style type
-        systems.
+        My research focuses on using machine learning to guide equality
+        saturation in e-graphs. I'm also interested in GPU programming languages
+        and Rust-style type systems.
     </p>
 
-    <h2>Contact</h2>
-    <p>Email: &lt;my-last-name&gt;@tu-berlin.de</p>
-
-    <h2>Links</h2>
-    <ul class="links">
-        <li>
+    <div class="contact-links">
+        <span class="email">&lt;my-last-name&gt;@tu-berlin.de</span>
+        <div class="socials">
             <a
                 href="https://github.com/nicoleh"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Icon name="github" /> GitHub
+                <Icon name="github" />
             </a>
-        </li>
-        <li>
             <a
                 href="https://bsky.app/profile/ipv3.org"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Icon name="bluesky" /> Bluesky
+                <Icon name="bluesky" />
             </a>
-        </li>
-        <li>
             <a
                 href="https://types.pl/@SaltyPeppermint"
                 target="_blank"
                 rel="me noopener noreferrer"
             >
-                <Icon name="mastodon" /> Mastodon
+                <Icon name="mastodon" />
             </a>
-        </li>
-    </ul>
+        </div>
+    </div>
 </Layout>
 
 <style>
-    .links {
-        list-style: none;
-        padding: 0;
+    h1 {
+        margin-bottom: 0.25rem;
+    }
+
+    .intro {
+        color: var(--color-text-muted);
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-links {
         display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-border);
     }
 
-    .links li {
-        margin: 0;
+    .email {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
     }
 
-    .links a {
+    .socials {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .contact-links a {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        color: var(--color-text-muted);
+    }
+
+    .contact-links a:hover {
+        color: var(--color-accent);
     }
 </style>
