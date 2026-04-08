@@ -12,13 +12,13 @@
 
 :root {
   /* Colors - edit these to change the site theme */
-  --color-bg: #1a1f1a;
-  --color-surface: #242a24;
-  --color-text: #e8efe8;
-  --color-text-muted: #a8b8a8;
-  --color-accent: #6b9b6b;
-  --color-accent-hover: #8ab88a;
-  --color-border: #3a4a3a;
+  --color-bg: #c2b370;
+  --color-surface: #a18745;
+  --color-text: #365e19;
+  --color-text-muted: #677d10;
+  --color-accent: #0b500b;
+  --color-accent-hover: #0b500b;
+  --color-border: #a18745;
 
   /* Layout */
   --max-width: 720px;
