@@ -3,13 +3,14 @@
 
 :root {
   /* Colors - edit these to change the site theme */
-  --color-bg: #c2b370;
-  --color-surface: #a18745;
+  --color-bg: #c2b370d7;
+  --color-surface: #a18745d7;
   --color-text: #365e19;
   --color-text-muted: #677d10;
   --color-accent: #0b500b;
+  /*513b1e*/
   --color-accent-hover: #0b500b;
-  --color-border: #a18745;
+  --color-border: #a18745d7;
 
   /* Layout */
   --max-width: 720px;
