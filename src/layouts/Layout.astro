@@ -1,5 +1,6 @@
 ---
 import "../styles/theme.css";
+import Icon from "../components/Icon.astro";
 
 interface Props {
     title: string;
@@ -29,25 +30,54 @@ const {
         <title>{title}</title>
     </head>
     <body>
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="/" class="nav-brand">ipv3.org</a>
-                <div class="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/publications">Publications</a>
-                    <!-- <a href="/cv">CV</a> -->
-                    <a href="/blog">Blog</a>
-                </div>
-            </div>
-        </nav>
-        <main class="main">
-            <slot />
-        </main>
-        <footer class="footer">
-            <p>&copy; 6 Nicole Thalia Heinimann</p>
-        </footer>
+        <button
+            id="sleep-btn"
+            aria-label="Toggle night mode"
+            title="Toggle night mode"
+        >
+            <Icon name="moon" id="icon-moon" />
+            <Icon name="sun" id="icon-sun" style="display:none" />
+        </button>
+        <div id="sleep-overlay">
+            <p>
+                This website is now asleep.<br />If it's urgent click the sun
+                button to wake it up.
+            </p>
+        </div>
     </body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">ipv3.org</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/publications">Publications</a>
+                <!-- <a href="/cv">CV</a> -->
+                <a href="/blog">Blog</a>
+            </div>
+        </div>
+    </nav>
+    <main class="main">
+        <slot />
+    </main>
+    <footer class="footer">
+        <p>&copy; 2026 Nicole Thalia Heinimann</p>
+    </footer>
 </html>
+<script>
+    const btn = document.getElementById("sleep-btn")!;
+    const iconMoon = document.getElementById("icon-moon")!;
+    const iconSun = document.getElementById("icon-sun")!;
+
+    function setSleep(asleep: boolean) {
+        document.body.classList.toggle("asleep", asleep);
+        iconMoon.style.display = asleep ? "none" : "";
+        iconSun.style.display = asleep ? "" : "none";
+    }
+
+    btn.addEventListener("click", () => {
+        setSleep(!document.body.classList.contains("asleep"));
+    });
+</script>
 
 <style is:global>
     * {
@@ -170,6 +200,64 @@ const {
     pre code {
         background-color: transparent;
         padding: 0;
+    }
+
+    #sleep-btn {
+        position: fixed;
+        top: 0.55rem;
+        right: 1rem;
+        z-index: 1000;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+    }
+
+    #sleep-btn:hover {
+        transform: scale(1.1);
+    }
+
+    #sleep-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: black;
+        z-index: 900;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    #sleep-overlay p {
+        color: #333;
+        font-size: 2rem;
+        cursor: default;
+    }
+
+    body.asleep #sleep-overlay {
+        display: flex;
+    }
+
+    body #icon-moon {
+        color: var(--color-accent);
+    }
+
+    body.asleep #icon-sun {
+        color: yellow;
+    }
+
+    body.asleep .nav,
+    body.asleep .main,
+    body.asleep .footer {
+        visibility: hidden;
     }
 
     @media (max-width: 600px) {

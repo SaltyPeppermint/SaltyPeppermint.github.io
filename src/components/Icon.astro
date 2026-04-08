@@ -2,18 +2,31 @@
 import { siGithub, siBluesky, siMastodon } from "simple-icons";
 
 interface Props {
-  name: "github" | "bluesky" | "mastodon";
+  name: "github" | "bluesky" | "mastodon" | "moon" | "sun";
   size?: number;
+  id?: string;
+  style?: string;
 }
 
-const icons = {
+const brandIcons: Record<string, { title: string; path: string }> = {
   github: siGithub,
   bluesky: siBluesky,
   mastodon: siMastodon,
 };
 
-const { name, size = 20 } = Astro.props;
-const icon = icons[name];
+const customIcons: Record<string, { title: string; path: string }> = {
+  moon: {
+    title: "Moon",
+    path: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z",
+  },
+  sun: {
+    title: "Sun",
+    path: "M12 2a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1zm9-7a1 1 0 0 1 0 2h-1a1 1 0 0 1 0-2h1zM4 11a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2h1zm14.364-5.364a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0zM7.757 16.243a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0zm10.607 1.414a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 1 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414zM7.757 7.757a1 1 0 0 1-1.414 0l-.707-.707A1 1 0 0 1 7.05 5.636l.707.707a1 1 0 0 1 0 1.414zM12 7a5 5 0 1 1 0 10A5 5 0 0 1 12 7z",
+  },
+};
+
+const { name, size = 20, id, style } = Astro.props;
+const icon = brandIcons[name] ?? customIcons[name];
 ---
 
 <svg
@@ -23,6 +36,8 @@ const icon = icons[name];
   height={size}
   fill="currentColor"
   aria-label={icon.title}
+  id={id}
+  style={style}
 >
   <path d={icon.path}></path>
 </svg>
