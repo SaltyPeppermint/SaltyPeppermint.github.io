@@ -64,6 +64,16 @@ const {
     </footer>
 </html>
 <script>
+    const footer = document.querySelector(".footer") as HTMLElement;
+    function updateFooterHeight() {
+        document.documentElement.style.setProperty(
+            "--footer-height",
+            1.1 * footer.offsetHeight + "px",
+        );
+    }
+    updateFooterHeight();
+    new ResizeObserver(updateFooterHeight).observe(footer);
+
     const btn = document.getElementById("sleep-btn")!;
     const iconMoon = document.getElementById("icon-moon")!;
     const iconSun = document.getElementById("icon-sun")!;
@@ -204,7 +214,7 @@ const {
 
     #sleep-btn {
         position: fixed;
-        top: 0.55rem;
+        bottom: calc(var(--footer-height, 4rem) + 0.5rem);
         right: 1rem;
         z-index: 1000;
         background: var(--color-surface);
