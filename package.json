@@ -9,12 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.15",
-    "astro": "^5.18.0",
-    "simple-icons": "^16.10.0"
+    "@astrojs/rss": "^4.0.18",
+    "astro": "^6.1.4",
+    "simple-icons": "^16.15.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.8",
     "typescript": "^5.9.3"
   }
 }
