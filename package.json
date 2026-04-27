@@ -12,11 +12,10 @@
     "@astrojs/rss": "^4.0.18",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource-variable/noto-sans-mono": "^5.2.10",
-    "astro": "^6.1.4",
-    "simple-icons": "^16.15.0"
+    "astro": "^6.1.9",
+    "simple-icons": "^16.18.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
