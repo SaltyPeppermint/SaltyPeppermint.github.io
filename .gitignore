@@ -24,6 +24,13 @@ pnpm-debug.log*
 .vscode/
 .zed/
 
+# direnv
+.direnv/
+
+# nix
+result
+result-*
+
 # Additional env files
 .env.*
 !.env.example
