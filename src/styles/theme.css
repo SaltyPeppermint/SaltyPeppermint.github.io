@@ -2,15 +2,13 @@
 @import "@fontsource-variable/noto-sans-mono/wght.css";
 
 :root {
-  /* Colors - edit these to change the site theme */
-  --color-bg: #ffe9b2;
-  --color-surface: #c9a959;
-  --color-text: #365e19;
-  --color-text-muted: #677d10;
-  --color-accent: #0b500b;
+  --color-bg: #FFE7CE;
+  --color-surface: #EC8B49;
+  --color-text: #164F4A;
+  --color-text-muted: #24837B;
   /*513b1e*/
-  --color-accent-hover: #0b500b;
-  --color-border: #c9a959;
+  --color-accent-hover: #5ABDAC;
+  --color-border: #EC8B49;
 
   /* Layout */
   --max-width: 720px;
