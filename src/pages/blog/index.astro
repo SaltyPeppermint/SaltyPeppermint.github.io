@@ -30,7 +30,7 @@ const posts: BlogPost[] = allBlogPosts
                 day: "numeric",
               })}
             </time>
-            <a href={`/blog/${post.slug}`} class="post-title">
+            <a href={`/blog/${post.id}`} class="post-title">
               {post.data.title}
             </a>
             <p class="post-description">{post.data.description}</p>
@@ -60,7 +60,6 @@ const posts: BlogPost[] = allBlogPosts
 
   .post-date {
     display: block;
-    color: var(--color-text);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
@@ -74,7 +73,6 @@ const posts: BlogPost[] = allBlogPosts
   }
 
   .post-description {
-    color: var(--color-text);
     margin: 0;
   }
 </style>
