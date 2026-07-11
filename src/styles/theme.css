@@ -2,13 +2,18 @@
 @import "@fontsource-variable/noto-sans-mono/wght.css";
 
 :root {
+
+  /*
+  All taken from
+  https://stephango.com/flexoki
+  */
   --color-bg: #FFE7CE;
-  --color-surface: #EC8B49;
+  --color-surface: #F9AE77;
   --color-text: #164F4A;
   --color-text-accent: #24837B;
   /*513b1e*/
   --color-accent-hover: #5ABDAC;
-  --color-border: #EC8B49;
+  --color-border: #F9AE77;
 
   /* Layout */
   --max-width: 720px;
