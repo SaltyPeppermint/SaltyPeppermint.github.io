@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@fontsource-variable/noto-sans": "^5.2.10",
-    "@fontsource-variable/noto-sans-mono": "^5.2.10",
-    "astro": "^7.0.6",
-    "simple-icons": "^16.25.0"
+    "@fontsource-variable/noto-sans": "^5.3.0",
+    "@fontsource-variable/noto-sans-mono": "^5.3.0",
+    "astro": "^7.1.6",
+    "simple-icons": "^16.28.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true
   }
 }
