@@ -12,7 +12,7 @@
     "@astrojs/rss": "^4.0.19",
     "@fontsource-variable/noto-sans": "^5.3.0",
     "@fontsource-variable/noto-sans-mono": "^5.3.0",
-    "astro": "^7.1.6",
+    "astro": "^7.2.8",
     "simple-icons": "^16.28.0"
   },
   "devDependencies": {
